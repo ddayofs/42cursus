@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 20:22:42 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 20:35:55 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 20:53:52 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ void	sort_over_3nodes(t_list **lst_a, t_list **lst_b)
 	if (!info)
 		exit (1);
 	info_init(info, info_size);
-	printf("OK\n");
-	record_info(lst_a, lst_b, &info, info_size);
-	instr_exec(lst_a, lst_b, &info, info_size);
+	printf("OK_init\n");
+	record_info(lst_a, lst_b, info, info_size);
+	instr_exec(lst_a, lst_b, info, info_size);
 }
 
 void	ft_sort(int argc, t_list **lst_a, t_list **lst_b)

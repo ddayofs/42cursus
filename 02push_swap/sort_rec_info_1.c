@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:43:26 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 20:23:57 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 21:22:40 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	info_init(t_info *info, int info_size)
 }
 
 //find out ra, rrb, ra, rra  num
-void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info **info)
+void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info *info)
 {
 	int		a_idx;
 	int		b_idx;
@@ -50,17 +50,18 @@ void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info **info)
 
 	b_idx = -1;
 	b_node = *lst_b;
+	printf("rec_info_1_start\n");
 	while (b_node)
 	{
-		info[b_node->data]->rb_num = ++b_idx;
-		info[b_node->data]->rrb_num = ft_lstsize(*lst_b) - b_idx;
+		(info + b_node->data)->rb_num = ++b_idx;
+		(info + b_node->data)->rrb_num = ft_lstsize(*lst_b) - b_idx;
 		a_node = *lst_a;
 		a_idx = -1;
 		while (a_node)
 		{
 			// make codes below another func 
-			info[b_node->data]->ra_num = ++a_idx;
-			info[b_node->data]->rra_num = ft_lstsize(*lst_a) - a_idx;
+			(info + b_node->data)->ra_num = ++a_idx;
+			(info + b_node->data)->rra_num = ft_lstsize(*lst_a) - a_idx;
 			if (a_node != *lst_a)
 			{
 				if (a_node->data > b_node->data && prev_node->data < b_node->data)
@@ -77,32 +78,37 @@ void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info **info)
 		}
 		b_node = b_node->next;
 	}
+	printf("record_info_1_complete\n");
+	return ;
 }
 
-// find out the number of each instruction set;
-void	rec_info_2(t_info **info, int info_size)
+// find out each number of each instruction set;
+void	rec_info_2(t_info *info, int info_size)
 {
 	int	arr[4];
 	int	i;
 	int	min;
+	int	j;
 
+	printf("rec_info_2 start");
 	i = -1;
 	while (++i < info_size)
 	{
-		arr[RRA_RB] = info[i]->rra_num + info[i]->rb_num;
-		arr[RA_RRB] = info[i]->ra_num + info[i]->rrb_num;
-		arr[RA_RB] = not_smaller_one(info[i]->ra_num, info[i]->rb_num);
-		arr[RRA_RRB] = not_smaller_one(info[i]->rra_num, info[i]->rrb_num);
-		min = INT_MAX;
-		i = -1;
-		while (++i < 4)
+		arr[RRA_RB] = (info + i)->rra_num + (info + i)->rb_num;
+		arr[RA_RRB] = (info + i)->ra_num + (info + i)->rrb_num;
+		arr[RA_RB] = not_smaller_one((info + i)->ra_num, (info + i)->rb_num);
+		arr[RRA_RRB] = not_smaller_one((info + i)->rra_num,
+				(info + i)->rrb_num);
+	}
+	min = INT_MAX;
+	j = -1;
+	while (++j < 4)
+	{
+		if (arr[j] < min)
 		{
-			if (arr[i] < min)
-			{
-				min = arr[i];
-				info[i]->comb = i;
-				info[i]->instr_cnt = min;
-			}
+			min = arr[j];
+			(info + j)->comb = j;
+			(info + j)->instr_cnt = min;
 		}
 	}
 }

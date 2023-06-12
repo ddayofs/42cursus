@@ -12,57 +12,61 @@
 
 #include "push_swap.h"
 
-void	ra_rb_case(t_info **info, int idx)
+void	ra_rb_case(t_info *info, int idx)
 {
-	if (info[idx]->ra_num >= info[idx]->rb_num)
+	if ((info + idx)->ra_num >= (info + idx)->rb_num)
 	{
-		info[idx]->rr_num = info[idx]->rb_num;
-		info[idx]->ra_num -= info[idx]->rr_num;
-		info[idx]->rb_num = 0;
+		(info + idx)->rr_num = (info + idx)->rb_num;
+		(info + idx)->ra_num -= (info + idx)->rr_num;
+		(info + idx)->rb_num = 0;
 	}
 	else
 	{
-		info[idx]->rr_num = info[idx]->ra_num;
-		info[idx]->rb_num -= info[idx]->rr_num;
-		info[idx]->ra_num = 0;
+		(info + idx)->rr_num = (info + idx)->ra_num;
+		(info + idx)->rb_num -= (info + idx)->rr_num;
+		(info + idx)->ra_num = 0;
 	}
 }
 
-void	rra_rrb_case(t_info **info, int idx)
+void	rra_rrb_case(t_info *info, int idx)
 {
-	if (info[idx]->rra_num >= info[idx]->rrb_num)
+	if ((info + idx)->rra_num >= (info + idx)->rrb_num)
 	{
-		info[idx]->rrr_num = info[idx]->rrb_num;
-		info[idx]->rra_num -= info[idx]->rrr_num;
-		info[idx]->rrb_num = 0;
+		(info + idx)->rrr_num = (info + idx)->rrb_num;
+		(info + idx)->rra_num -= (info + idx)->rrr_num;
+		(info + idx)->rrb_num = 0;
 	}
 	else
 	{
-		info[idx]->rrr_num = info[idx]->rra_num;
-		info[idx]->rrb_num -= info[idx]->rrr_num;
-		info[idx]->rra_num = 0;
+		(info + idx)->rrr_num = (info + idx)->rra_num;
+		(info + idx)->rrb_num -= (info + idx)->rrr_num;
+		(info + idx)->rra_num = 0;
 	}
 }
 
 // revise the num of instr when excuting ra_rb, rra_rrb 
-void	rec_info_3(t_info **info, int info_size)
+void	rec_info_3(t_info *info, int info_size)
 {
 	int	idx;
 
 	idx = -1;
 	while (++idx < info_size)
 	{
-		if (info[idx]->comb == RA_RB)
+		if ((info + idx)->comb == RA_RB)
 			ra_rb_case(info, idx);
-		else if (info[idx]->comb == RRA_RRB)
+		else if ((info + idx)->comb == RRA_RRB)
 			rra_rrb_case(info, idx);
 	}
 }
 
 void	record_info(t_list **lst_a, t_list **lst_b,
-		t_info **info, int info_size)
+		t_info *info, int info_size)
 {
+	printf("record_info_func start\n");
 	rec_info_1(lst_a, lst_b, info);
+	printf("info_1_ok");
 	rec_info_2(info, info_size);
+	printf("info_2_ok");
 	rec_info_3(info, info_size);
+	printf("info_3_ok");
 }

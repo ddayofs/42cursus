@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:51 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 20:24:14 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 20:51:04 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,25 +93,25 @@ void	ready_to_greedy(t_list **lst_a, t_list **lst_b);
 
 //sort_rec_info_1.c
 void	info_init(t_info *info, int info_size);
-void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info **info);
-void	rec_info_2(t_info **info, int info_size);
+void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info *info);
+void	rec_info_2(t_info *info, int info_size);
 
 //sort_rec_info_2.c
-// void	ra_rb_case(t_info **info, int idx);
-// void	rra_rrb_case(t_info **info, int idx)
-// void	rec_info_3(t_info **info, int info_size);
+// void	ra_rb_case(t_info *info, int idx);
+// void	rra_rrb_case(t_info *info, int idx)
+// void	rec_info_3(t_info *info, int info_size);
 void	record_info(t_list **lst_a, t_list **lst_b,
-			t_info **info, int info_size);
+			t_info *info, int info_size);
 
 //sort_instr_exec_src.c
-void	rra_rb(t_list **lst_a, t_list **lst_b, t_info **info, int info_size);
-void	ra_rrb(t_list **lst_a, t_list **lst_b, t_info **info, int info_size);
-void	ra_rb(t_list **lst_a, t_list **lst_b, t_info **info, int info_size);
-void	rra_rrb(t_list **lst_a, t_list **lst_b, t_info **info, int info_size);
+void	rra_rb(t_list **lst_a, t_list **lst_b, t_info *info, int info_size);
+void	ra_rrb(t_list **lst_a, t_list **lst_b, t_info *info, int info_size);
+void	ra_rb(t_list **lst_a, t_list **lst_b, t_info *info, int info_size);
+void	rra_rrb(t_list **lst_a, t_list **lst_b, t_info *info, int info_size);
 
 //sort_instr_exec.c
-int		find_best_in_b(t_info **info, int info_size);
-void	instr_exec(t_list **lst_a, t_list **lst_b, t_info **info,
+int		find_best_in_b(t_info *info, int info_size);
+void	instr_exec(t_list **lst_a, t_list **lst_b, t_info *info,
 			int info_size);
 
 //sort.c
