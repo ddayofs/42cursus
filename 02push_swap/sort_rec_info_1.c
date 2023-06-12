@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:43:26 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 14:46:57 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 20:23:57 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,23 @@ int	not_smaller_one(int a, int b)
 	return (b);
 }
 
-void	comb_init(t_info **info, int info_size)
+void	info_init(t_info *info, int info_size)
 {
 	int	i;
 
 	i = -1;
 	while (++i < info_size)
-		info[i]->comb = -1;
+	{
+		(info + i)->ra_num = -1;
+		(info + i)->rb_num = -1;
+		(info + i)->rr_num = -1;
+		(info + i)->rra_num = -1;
+		(info + i)->rrb_num = -1;
+		(info + i)->rrr_num = -1;
+		(info + i)->comb = -1;
+		(info + i)->instr_cnt = -1;
+	}
+	return ;
 }
 
 //find out ra, rrb, ra, rra  num

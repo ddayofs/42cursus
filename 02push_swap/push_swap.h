@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:51 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 16:10:08 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 20:24:14 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	make_indexed_lst(t_list **lst);
 void	ready_to_greedy(t_list **lst_a, t_list **lst_b);
 
 //sort_rec_info_1.c
-void	comb_init(t_info **info, int info_size);
+void	info_init(t_info *info, int info_size);
 void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info **info);
 void	rec_info_2(t_info **info, int info_size);
 
@@ -111,7 +111,8 @@ void	rra_rrb(t_list **lst_a, t_list **lst_b, t_info **info, int info_size);
 
 //sort_instr_exec.c
 int		find_best_in_b(t_info **info, int info_size);
-void	instr_exec(t_list **lst_a, t_list **lst_b, t_info **info, int info_size);
+void	instr_exec(t_list **lst_a, t_list **lst_b, t_info **info,
+			int info_size);
 
 //sort.c
 // void	sort_2nodes(t_list **lst);

@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 20:22:42 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 19:41:19 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 20:35:55 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,16 @@ void	sort_over_3nodes(t_list **lst_a, t_list **lst_b)
 	info_size = ft_lstsize(*lst_a);
 	make_indexed_lst(lst_a);
 	ready_to_greedy(lst_a, lst_b);
+	printf("OK_0\n");
 	sort_3nodes(lst_a);
+	printf("OK_01\n");
 	//delete_print func
 	print(*lst_a, *lst_b);
 	info = (t_info *)malloc(sizeof(t_info) * info_size);
 	if (!info)
 		exit (1);
-	// comb_init(&info, info_size);
-	printf("ok\n");
+	info_init(info, info_size);
+	printf("OK\n");
 	record_info(lst_a, lst_b, &info, info_size);
 	instr_exec(lst_a, lst_b, &info, info_size);
 }

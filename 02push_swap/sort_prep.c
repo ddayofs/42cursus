@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 14:30:41 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 19:16:04 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 20:17:29 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ready_to_greedy(t_list **lst_a, t_list **lst_b)
 
 	lst_a_size = ft_lstsize(*lst_a);
 	i = -1;
-	while (++i < lst_a_size)
+	while (++i < lst_a_size && ft_lstsize(*lst_a) > 3)
 	{
 		top = *lst_a;
 		if (top->data < lst_a_size / 3)
