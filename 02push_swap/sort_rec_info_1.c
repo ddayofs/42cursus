@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_rec_info_1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:43:26 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/11 20:23:55 by marvin           ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 14:46:57 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,17 @@ int	not_smaller_one(int a, int b)
 	return (b);
 }
 
+void	comb_init(t_info **info, int info_size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < info_size)
+		info[i]->comb = -1;
+}
+
 //find out ra, rrb, ra, rra  num
-void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info *info[])
+void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info **info)
 {
 	int		a_idx;
 	int		b_idx;
@@ -61,7 +70,7 @@ void	rec_info_1(t_list **lst_a, t_list **lst_b, t_info *info[])
 }
 
 // find out the number of each instruction set;
-void	rec_info_2(t_info *info[], int info_size)
+void	rec_info_2(t_info **info, int info_size)
 {
 	int	arr[4];
 	int	i;
@@ -82,8 +91,8 @@ void	rec_info_2(t_info *info[], int info_size)
 			{
 				min = arr[i];
 				info[i]->comb = i;
+				info[i]->instr_cnt = min;
 			}
 		}
-		info[i]->instr_cnt = min;
 	}
 }

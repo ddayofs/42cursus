@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_2.c                                           :+:      :+:    :+:   */
+/*   sort_prep.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 14:30:41 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/09 16:20:52 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 19:16:04 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ch_int_to_idx(t_list **lst, int *tmp, int lst_size)
 	{
 		tmp[++idx] = cur_node->data;
 		cur_node = cur_node->next;
-	}	
+	}
 	sort_intarr(tmp, lst_size);
 	cur_node = *lst;
 	while (cur_node)
@@ -57,7 +57,10 @@ void	ch_int_to_idx(t_list **lst, int *tmp, int lst_size)
 		while (++idx < lst_size)
 		{
 			if (cur_node->data == tmp[idx])
+			{
 				cur_node->data = idx;
+				break ;
+			}
 		}	
 		cur_node = cur_node->next;
 	}
@@ -71,10 +74,12 @@ void	make_indexed_lst(t_list **lst)
 
 	cur_node = *lst;
 	lst_size = ft_lstsize(cur_node);
-	tmp = (int *)malloc(sizeof(lst_size));
+	tmp = (int *)malloc(sizeof(int) * lst_size);
 	if (!tmp)
 		exit(1);
 	ch_int_to_idx(lst, tmp, lst_size);
+	free(tmp);
+	tmp = NULL;
 }
 
 void	ready_to_greedy(t_list **lst_a, t_list **lst_b)
@@ -84,20 +89,21 @@ void	ready_to_greedy(t_list **lst_a, t_list **lst_b)
 	int		i;
 
 	lst_a_size = ft_lstsize(*lst_a);
-	i = 0;
-	while (++i <= lst_a_size)
+	i = -1;
+	while (++i < lst_a_size)
 	{
 		top = *lst_a;
 		if (top->data < lst_a_size / 3)
 		{
 			pb(lst_b, lst_a);
-			rb(lst_b);		
+			rb(lst_b);
 		}
 		else if (top->data < lst_a_size * 2 / 3)
 			pb(lst_b, lst_a);
 		else
 			ra(lst_a);
 	}
+	print(*lst_a, *lst_b);
 	while (ft_lstsize(*lst_a) > 3)
 		pb(lst_b, lst_a);
 }

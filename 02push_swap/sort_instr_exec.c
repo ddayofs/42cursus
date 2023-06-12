@@ -1,34 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_exec.c                                        :+:      :+:    :+:   */
+/*   sort_instr_2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/10 19:18:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/11 20:26:23 by marvin           ###   ########seoul.kr  */
+/*   Created: 2023/06/12 14:25:11 by donglee2          #+#    #+#             */
+/*   Updated: 2023/06/12 14:25:11 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	instr_exec()
+int	find_best_in_b(t_info **info, int info_size)
 {
+	int	i;
+	int	min;
+	int	best_node;
 
+	min = INT_MAX;
+	i = -1;
+	while (++i < info_size)
+	{
+		if (min > info[i]->instr_cnt)
+		{
+			min = info[i]->instr_cnt;
+			best_node = i;
+		}
+	}
+	return (best_node);
 }
 
-void	sort_over_3nodes(t_list **lst_a, t_list **lst_b)
+void	instr_exec(t_list **lst_a, t_list **lst_b, t_info **info, int info_size)
 {
-	t_info	*info;
-	int		info_size;
+	int	best_node;
 
-	info_size = ft_lstsize(*lst_a);
-	make_indexed_lst(lst_a);
-	ready_to_greedy(lst_a, lst_b);
-	sort_3nodes(lst_a);
-	info = (t_info *)malloc(sizeof(t_info) * info_size);
-	if (!info)
-		exit (1);
-	record_info(lst_a, lst_b, &info, info_size);
-
+	best_node = find_best_in_b(info, info_size);
+	if (info[best_node]->comb == RRA_RB)
+		rra_rb(lst_a, lst_b, info, info_size);
+	else if (info[best_node]->comb == RA_RRB)
+		ra_rrb(lst_a, lst_b, info, info_size);
+	else if (info[best_node]->comb == RA_RB)
+		ra_rb(lst_a, lst_b, info, info_size);
+	else if (info[best_node]->comb == RRA_RRB)
+		rra_rrb(lst_a, lst_b, info, info_size);
 }

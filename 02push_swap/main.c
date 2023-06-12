@@ -6,13 +6,15 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 19:45:59 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/09 16:23:45 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 19:38:29 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 #include <unistd.h>
 
+//delete print func
 void	print(t_list *a, t_list *b)
 {
 	printf("a: ");
@@ -43,12 +45,9 @@ int	main(int argc, char *argv[])
 	while (argv[++i])
 		chk_arg(argv[i], &lst_a);
 	chk_dup_sorted(lst_a);
-	make_indexed_lst(&lst_a);
+	ft_sort(argc, &lst_a, &lst_b);
 	print(lst_a, lst_b);
-	ready_to_greedy(&lst_a, &lst_b);
-	print(lst_a, lst_b);
-		// ft_sort(argc, &lst_a, &lst_b);
-	return (0);
+	exit(0);
 }
 
 // int	main(int argc, char *argv[])

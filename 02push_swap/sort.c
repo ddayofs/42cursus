@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_1.c                                           :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 20:22:42 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/09 16:45:49 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/12 19:41:19 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	sort_2nodes(t_list **lst)
 	tmp = *lst;
 	if (tmp->data < tmp->next->data)
 		sa(lst);
-	exit(0);
 }
 
 void	sort_3nodes(t_list **lst)
@@ -48,8 +47,28 @@ void	sort_3nodes(t_list **lst)
 		sa(lst);
 		rra(lst);
 	}
-	exit (0);
 }
+
+void	sort_over_3nodes(t_list **lst_a, t_list **lst_b)
+{
+	t_info	*info;
+	int		info_size;
+
+	info_size = ft_lstsize(*lst_a);
+	make_indexed_lst(lst_a);
+	ready_to_greedy(lst_a, lst_b);
+	sort_3nodes(lst_a);
+	//delete_print func
+	print(*lst_a, *lst_b);
+	info = (t_info *)malloc(sizeof(t_info) * info_size);
+	if (!info)
+		exit (1);
+	// comb_init(&info, info_size);
+	printf("ok\n");
+	record_info(lst_a, lst_b, &info, info_size);
+	instr_exec(lst_a, lst_b, &info, info_size);
+}
+
 void	ft_sort(int argc, t_list **lst_a, t_list **lst_b)
 {
 	if (argc == 3)
@@ -58,4 +77,5 @@ void	ft_sort(int argc, t_list **lst_a, t_list **lst_b)
 		sort_3nodes(lst_a);
 	else
 		sort_over_3nodes(lst_a, lst_b);
+	exit(1);
 }
