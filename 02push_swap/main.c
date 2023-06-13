@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 19:45:59 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/12 19:38:29 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/13 13:40:22 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int argc, char *argv[])
 		chk_arg(argv[i], &lst_a);
 	chk_dup_sorted(lst_a);
 	ft_sort(argc, &lst_a, &lst_b);
+	printf("after instr_exec :\n");
 	print(lst_a, lst_b);
 	exit(0);
 }

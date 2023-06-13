@@ -64,9 +64,9 @@ void	record_info(t_list **lst_a, t_list **lst_b,
 {
 	printf("record_info_func start\n");
 	rec_info_1(lst_a, lst_b, info);
-	printf("info_1_ok");
+	printf("info_1_ok\n");
 	rec_info_2(info, info_size);
-	printf("info_2_ok");
+	printf("info_2_ok\n");
 	rec_info_3(info, info_size);
-	printf("info_3_ok");
+	printf("info_3_ok\n");
 }
