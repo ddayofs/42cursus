@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   b_get_next_line_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 14:11:54 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 17:17:00 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 16:55:55 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "b_get_next_line_bonus.h"
 #include <stdlib.h>
 
 char	*cut_line(char **save)
@@ -88,20 +88,3 @@ char	*get_next_line(int fd)
 	}
 	return (cut_line(&save));
 }
-
-// #include <fcntl.h>
-// #include <stdio.h>
-
-// int main()
-// {
-// 	int fd = open("test.txt", O_RDONLY);
-
-// 	char *new_line = get_next_line(fd);
-// 	while (new_line)
-// 	{
-// 		printf("%s", new_line);
-// 		new_line = get_next_line(fd);
-// 	}
-// 	printf("%s\n", new_line);
-// 	return (0);
-// }

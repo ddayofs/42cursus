@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction_set_1.c                                :+:      :+:    :+:   */
+/*   b_instr_set_1_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 18:18:09 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/06 12:31:19 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 17:19:22 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 #include <unistd.h>
 
 void	sa(t_list **lst)
@@ -25,7 +25,7 @@ void	sa(t_list **lst)
 	tmp2 = (*lst)->next;
 	(*lst)->next = tmp1;
 	tmp1->next = tmp2;
-	write(1, "sa\n", 3);
+	return ;
 }
 
 void	sb(t_list **lst)
@@ -40,7 +40,7 @@ void	sb(t_list **lst)
 	tmp2 = (*lst)->next;
 	(*lst)->next = tmp1;
 	tmp1->next = tmp2;
-	write (1, "sb\n", 3);
+	return ;
 }
 
 void	pa(t_list **lst_a, t_list **lst_b)
@@ -52,7 +52,7 @@ void	pa(t_list **lst_a, t_list **lst_b)
 	orib_1st = *lst_b;
 	*lst_b = (*lst_b)->next;
 	ft_lstadd_front(lst_a, orib_1st);
-	write(1, "pa\n", 3);
+	return ;
 }
 
 void	pb(t_list **lst_b, t_list **lst_a)
@@ -64,5 +64,5 @@ void	pb(t_list **lst_b, t_list **lst_a)
 	oria_1st = *lst_a;
 	*lst_a = (*lst_a)->next;
 	ft_lstadd_front(lst_b, oria_1st);
-	write(1, "pb\n", 3);
+	return ;
 }

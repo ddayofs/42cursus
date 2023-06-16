@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:11:29 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/15 20:20:55 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 14:00:05 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,7 @@ void	rec_info_2(t_info *info)
 	else if (info->comb == RA_RB)
 		ra_rb_case(info);
 	else
-	// if (info->comb == RRA_RRB)
 		rra_rrb_case(info);
-	// else
-	// 	printf("The combination is not recorded in the range of 0 to 3 in rec_info_2func\n");
 	return ;
 }
 

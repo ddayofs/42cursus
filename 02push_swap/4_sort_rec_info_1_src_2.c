@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:43:26 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/15 17:58:18 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 15:56:38 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ t_list	*case_1(t_list *lst_a, t_list *lst_b, t_info *tmp)
 		}
 		else
 		{
-			if (ft_lstlast(a_node)->data < lst_b->data && lst_b->data < a_node->data)
+			if (ft_lstlast(a_node)->data < lst_b->data
+				&& lst_b->data < a_node->data)
 				return (rec_case_1(lst_a, tmp, a_idx));
 		}
 		prev = a_node;

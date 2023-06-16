@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instr_src_1.c                                      :+:      :+:    :+:   */
+/*   1_instr_src_1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:53:32 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/14 14:45:46 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/15 13:40:59 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 		exit(1);
 	new->next = *lst;
 	*lst = new;
+	return ;
 }
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
@@ -48,4 +49,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (tmp->next)
 		tmp = tmp->next;
 	tmp->next = new;
+	return ;
 }

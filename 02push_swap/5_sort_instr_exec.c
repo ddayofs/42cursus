@@ -75,9 +75,6 @@ void	instr_exec(t_list **lst_a, t_list **lst_b, t_info *info)
 	else if (info->comb == RA_RB)
 		ra_rb_exec(lst_a, lst_b, info);
 	else
-	// if (info->comb == RRA_RRB)
 		rra_rrb_exec(lst_a, lst_b, info);
-	// else
-	// 	printf("The combination is not in the range 0 to 3 in instr_exec func\n");
 	return ;
 }

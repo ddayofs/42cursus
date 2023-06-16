@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 19:48:19 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/15 13:41:32 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 15:55:13 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ char	*ft_itoa(int n)
 	nbr = (long long)n;
 	ret_len = how_many_digits(nbr, 10);
 	ret = (char *)malloc(sizeof(char) * (ret_len + 1));
-	if (ret == 0)
-		return (0);
+	if (!ret)
+		exit(1);
 	if (nbr == 0)
 		ret[0] = '0';
 	else if (nbr < 0)
@@ -102,7 +102,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-void	chk_arg(char *str, t_list **lst_a)
+int	chk_arg(char *str, t_list **lst_a)
 {
 	char	**tmp1;
 	char	*tmp2;
@@ -110,11 +110,13 @@ void	chk_arg(char *str, t_list **lst_a)
 
 	tmp1 = ft_split(str, ' ');
 	if (!tmp1)
-		print_err();
+		exit(1);
+	if (!*tmp1)
+		return (1);
 	i = -1;
 	while (tmp1[++i])
 	{
-		if_plus(tmp1[i][0], tmp1[i]);
+		if_plus(tmp1[i]);
 		tmp2 = ft_itoa(ft_atoi(tmp1[i]));
 		if (ft_strcmp(tmp1[i], tmp2))
 			print_err();
@@ -125,5 +127,5 @@ void	chk_arg(char *str, t_list **lst_a)
 			ft_lstadd_back(lst_a, ft_lstnew(ft_atoi(tmp1[i])));
 		}
 	}
-	return ;
+	return (0);
 }

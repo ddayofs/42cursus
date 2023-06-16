@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction_set_2.c                                :+:      :+:    :+:   */
+/*   b_instr_set_2_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:26:20 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/05 15:22:53 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 17:19:19 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 #include <unistd.h>
 
 void	ra(t_list **lst)
@@ -23,7 +23,7 @@ void	ra(t_list **lst)
 	*lst = (*lst)->next;
 	ft_lstadd_back(lst, tmp);
 	tmp->next = NULL;
-	write(1, "ra\n", 3);
+	return ;
 }
 
 void	rb(t_list **lst)
@@ -36,7 +36,7 @@ void	rb(t_list **lst)
 	*lst = (*lst)->next;
 	ft_lstadd_back(lst, tmp);
 	tmp->next = NULL;
-	write(1, "rb\n", 3);
+	return ;
 }
 
 void	rr(t_list **lst_a, t_list **lst_b)
@@ -55,5 +55,5 @@ void	rr(t_list **lst_a, t_list **lst_b)
 	*lst_b = (*lst_b)->next;
 	ft_lstadd_back(lst_b, tmp);
 	tmp->next = NULL;
-	write(1, "rr\n", 3);
+	return ;
 }

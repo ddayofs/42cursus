@@ -6,13 +6,13 @@
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 20:01:47 by donglee2          #+#    #+#              #
-#    Updated: 2023/06/15 20:43:29 by donglee2         ###   ########seoul.kr   #
+#    Updated: 2023/06/16 13:54:06 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 MANDATORY_SRCS = 0_chk_arg_1.c\
 0_chk_arg_2.c\
 0_chk_arg_split.c\

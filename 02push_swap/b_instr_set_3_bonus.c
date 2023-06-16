@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instruction_set_3.c                                :+:      :+:    :+:   */
+/*   b_instr_set_3_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:25:19 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/05 15:23:25 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 17:19:15 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 #include <unistd.h>
 
 void	rra(t_list **lst)
@@ -27,7 +27,7 @@ void	rra(t_list **lst)
 	cur_node->next = NULL;
 	tmp->next = *lst;
 	*lst = tmp;
-	write(1, "rra\n", 4);
+	return ;
 }
 
 void	rrb(t_list **lst)
@@ -44,7 +44,7 @@ void	rrb(t_list **lst)
 	cur_node->next = NULL;
 	tmp->next = *lst;
 	*lst = tmp;
-	write(1, "rrb\n", 4);
+	return ;
 }
 
 void	rrr(t_list **lst_a, t_list **lst_b)
@@ -70,5 +70,5 @@ void	rrr(t_list **lst_a, t_list **lst_b)
 	cur_node->next = NULL;
 	tmp->next = *lst_b;
 	*lst_b = tmp;
-	write(1, "rrr\n", 4);
+	return ;
 }
