@@ -6,7 +6,7 @@
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 20:01:47 by donglee2          #+#    #+#              #
-#    Updated: 2023/06/16 19:50:47 by donglee2         ###   ########seoul.kr   #
+#    Updated: 2023/06/16 20:02:53 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ clean:
 	$(RM) $(MANDATORY_OBJS) $(BONUS_OBJS) bonus
  
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_NAME)
  
 re: fclean all
 
