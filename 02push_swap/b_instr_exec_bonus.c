@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 16:41:41 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 19:34:58 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 19:59:06 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	chk_exec_instr(t_list **lst_a, t_list **lst_b, char	*str)
 	else if (!ft_strcmp(str, "pa\n"))
 		pa(lst_a, lst_b);
 	else if (!ft_strcmp(str, "pb\n"))
-		pb(lst_a, lst_b);
+		pb(lst_b, lst_a);
 	else if (!ft_strcmp(str, "ra\n"))
 		ra(lst_a);
 	else if (!ft_strcmp(str, "rb\n"))
