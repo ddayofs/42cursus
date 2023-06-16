@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1_instr_src_1.c                                    :+:      :+:    :+:   */
+/*   b_instr_src_1_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 14:53:32 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/15 13:40:59 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 19:37:44 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "b_push_swap_bonus.h"
 #include <stdlib.h>
 
 t_list	*ft_lstnew(int integer)

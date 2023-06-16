@@ -6,11 +6,11 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 16:41:41 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 17:35:06 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 19:34:58 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "b_push_swap_bonus.h"
 
 void	chk_exec_instr(t_list **lst_a, t_list **lst_b, char	*str)
 {

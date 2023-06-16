@@ -6,11 +6,12 @@
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 20:01:47 by donglee2          #+#    #+#              #
-#    Updated: 2023/06/16 13:54:06 by donglee2         ###   ########seoul.kr   #
+#    Updated: 2023/06/16 19:50:47 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BONUS_NAME = checker
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
 MANDATORY_SRCS = 0_chk_arg_1.c\
@@ -31,7 +32,18 @@ MANDATORY_SRCS = 0_chk_arg_1.c\
 6_sort_2.c\
 7_main.c\
 
-BONUS_SRCS = 
+BONUS_SRCS = b_chk_arg_1_bonus.c\
+b_chk_arg_2_bonus.c\
+b_chk_arg_split_bonus.c\
+b_get_next_line_bonus.c\
+b_get_next_line_utils_bonus.c\
+b_instr_exec_bonus.c\
+b_instr_set_1_bonus.c\
+b_instr_set_2_bonus.c\
+b_instr_set_3_bonus.c\
+b_instr_src_1_bonus.c\
+b_instr_src_2_bonus.c\
+b_main_bonus.c\
 
 MANDATORY_OBJS = $(MANDATORY_SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
@@ -45,8 +57,8 @@ all: $(NAME)
 $(NAME): $(MANDATORY_OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $(MANDATORY_OBJS)
 
-bonus: $(BONUS_OBJS) $(MANDATORY_OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(MANDATORY_OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
+	$(CC) $(CFLAGS) -o $(BONUS_NAME) $(BONUS_OBJS)
 	touch $@
 
 clean:	
