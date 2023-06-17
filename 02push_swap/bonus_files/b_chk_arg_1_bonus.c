@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   0_chk_arg_1.c                                      :+:      :+:    :+:   */
+/*   b_chk_arg_1_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 19:48:19 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 15:55:13 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/17 17:52:56 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "b_push_swap_bonus.h"
 #include <stdlib.h>
 
 int	ft_atoi(char *str)
@@ -102,30 +102,12 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-int	chk_arg(char *str, t_list **lst_a)
+void	free_all(char **tmp1)
 {
-	char	**tmp1;
-	char	*tmp2;
-	int		i;
+	int	i;
 
-	tmp1 = ft_split(str, ' ');
-	if (!tmp1)
-		exit(1);
-	if (!*tmp1)
-		return (1);
 	i = -1;
 	while (tmp1[++i])
-	{
-		if_plus(tmp1[i]);
-		tmp2 = ft_itoa(ft_atoi(tmp1[i]));
-		if (ft_strcmp(tmp1[i], tmp2))
-			print_err();
-		else
-		{
-			free(tmp2);
-			tmp2 = NULL;
-			ft_lstadd_back(lst_a, ft_lstnew(ft_atoi(tmp1[i])));
-		}
-	}
-	return (0);
+		free(tmp1[i]);
+	free(tmp1);
 }

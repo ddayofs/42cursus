@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:51 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 17:26:03 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/17 17:48:55 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,13 @@ typedef struct s_info
 
 //chk_arg_1.c
 int		ft_atoi(char *str);
-int		chk_arg(char *str, t_list **lst_a);
+int		how_many_digits(long long nbr, int base_len);
+char	*ft_itoa(int n);
+int		ft_strcmp(char *s1, char *s2);
+void	free_all(char **tmp1);
 
 //chk_arg_2.c
+void	chk_arg(char *str, t_list **lst_a);
 void	print_err(void);
 void	if_plus(char *str);
 int		chk_sorted(t_list *lst);

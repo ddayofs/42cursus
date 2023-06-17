@@ -6,12 +6,11 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 12:16:42 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/15 20:22:01 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/16 20:08:07 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
 void	rra_rb_case(t_info *info)
 {
