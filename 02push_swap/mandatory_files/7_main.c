@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 19:45:59 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/17 18:10:10 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/17 18:15:24 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(int argc, char *argv[])
 	static t_list	*lst_b;
 	int				i;
 
-	atexit(leaks);
 	if (argc < 2)
 		return (0);
 	i = 0;
