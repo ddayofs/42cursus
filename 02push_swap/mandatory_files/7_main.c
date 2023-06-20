@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 19:45:59 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/17 18:15:24 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 16:12:49 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int	main(int argc, char *argv[])
 	if (!chk_sorted(lst_a))
 		exit(0);
 	ft_sort(&lst_a, &lst_b);
-	exit(0);
+	return (0);
 }

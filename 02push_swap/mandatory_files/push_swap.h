@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:51 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/17 17:48:55 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 16:08:45 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,23 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 
-//instr_set_1.c
-void	sa(t_list **lst);
-void	sb(t_list **lst);
+//instr_set_p.c
 void	pa(t_list **lst_a, t_list **lst_b);
 void	pb(t_list **lst_b, t_list **lst_a);
 
-//instr_set_2.c
+//instr_set_r.c
 void	ra(t_list **lst);
 void	rb(t_list **lst);
 void	rr(t_list **lst_a, t_list **lst_b);
 
-//instr_set_3.c
+//instr_set_rr.c
 void	rra(t_list **lst);
 void	rrb(t_list **lst);
 void	rrr(t_list **lst_a, t_list **lst_b);
+
+//instr_set_s
+void	sa(t_list **lst);
+void	sb(t_list **lst);
 
 //sort_prep.c
 void	make_indexed_lst(t_list **lst);
@@ -119,9 +121,10 @@ void	instr_exec(t_list **lst_a, t_list **lst_b, t_info *info);
 //sort_1.c
 void	sort_2nodes(t_list **lst);
 void	sort_3nodes(t_list **lst);
-void	sort_over_3nodes(t_list **lst_a, t_list **lst_b);
+void	last_sort(t_list **lst_a);
 
 //sort_2.c
+void	sort_over_3nodes(t_list **lst_a, t_list **lst_b);
 void	ft_sort(t_list **lst_a, t_list **lst_b);
 
 //main.c

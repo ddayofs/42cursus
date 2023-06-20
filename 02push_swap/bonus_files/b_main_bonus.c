@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 16:19:36 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/17 18:09:28 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 16:20:37 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	main(int argc, char *argv[])
 		free(new_line);
 		new_line = get_next_line(0);
 	}
-	free(new_line);
-	if (!chk_sorted(lst_a))
-		write(1, "OK\n", 3);
-	else
+	if (ft_lstsize(lst_b) || chk_sorted(lst_a))
 		write(1, "KO\n", 3);
+	else
+		write(1, "OK\n", 3);
+	return (0);
 }

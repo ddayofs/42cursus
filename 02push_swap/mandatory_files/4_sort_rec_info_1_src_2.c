@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 16:43:26 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 15:56:38 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 15:41:46 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	rec_ra_rra(t_list *lst_a, t_list *lst_b, t_info *tmp)
 		case_2(lst_a, tmp);
 }
 
-// find out each number of each instruction set;
 void	rec_comb_cnt(t_info *tmp)
 {
 	int	arr[4];

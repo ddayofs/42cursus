@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 19:13:34 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/17 18:02:42 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 16:03:07 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	chk_arg(char *str, t_list **lst_a)
 		else
 		{
 			free(tmp2);
-			tmp2 = NULL;
 			ft_lstadd_back(lst_a, ft_lstnew(ft_atoi(tmp1[i])));
 		}
 	}
@@ -50,6 +49,8 @@ void	print_err(void)
 
 int	chk_sorted(t_list *lst)
 {
+	if (!lst)
+		return (1);
 	while (lst->next)
 	{
 		if (lst->data > lst->next->data)

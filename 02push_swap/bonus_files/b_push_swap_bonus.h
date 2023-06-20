@@ -6,18 +6,38 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 19:23:48 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/17 18:02:04 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 15:14:50 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef B_PUSH_SWAP_BONUS_H
 # define B_PUSH_SWAP_BONUS_H
 
+# define RRA_RB			0
+# define RA_RRB			1
+# define RA_RB			2
+# define RRA_RRB		3
+# define INT_MAX		2147483647;
+# define INT_MIN		-2147483648;
+# define USINT_MAX		4294967295;
+
 typedef struct s_list
 {
 	int				data;
 	struct s_list	*next;
 }t_list;
+
+typedef struct s_info
+{
+	int				ra_num;
+	int				rb_num;
+	int				rr_num;
+	int				rra_num;
+	int				rrb_num;
+	int				rrr_num;
+	int				comb;
+	unsigned int	cnt;
+}t_info;
 
 //b_chk_arg_1_bonus.c
 int		ft_atoi(char *str);

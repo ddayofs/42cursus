@@ -5,12 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/05 20:01:47 by donglee2          #+#    #+#              #
-#    Updated: 2023/06/20 15:19:11 by donglee2         ###   ########seoul.kr   #
+#    Created: 2023/06/19 16:34:18 by donglee2          #+#    #+#              #
+#    Updated: 2023/06/19 16:47:54 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+
+NAME = pipex
 BONUS_NAME = checker
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -22,10 +23,9 @@ $(MANDATORY_DIR)/0_chk_arg_2.c\
 $(MANDATORY_DIR)/0_chk_arg_split.c\
 $(MANDATORY_DIR)/1_instr_src_1.c\
 $(MANDATORY_DIR)/1_instr_src_2.c\
-$(MANDATORY_DIR)/2_instr_set_p_.c\
-$(MANDATORY_DIR)/2_instr_set_r_.c\
-$(MANDATORY_DIR)/2_instr_set_rr_.c\
-$(MANDATORY_DIR)/2_instr_set_s_.c\
+$(MANDATORY_DIR)/2_instr_set_1.c\
+$(MANDATORY_DIR)/2_instr_set_2.c\
+$(MANDATORY_DIR)/2_instr_set_3.c\
 $(MANDATORY_DIR)/3_sort_prep.c\
 $(MANDATORY_DIR)/4_sort_rec_info_1_src_1.c\
 $(MANDATORY_DIR)/4_sort_rec_info_1_src_2.c\
@@ -44,10 +44,9 @@ $(BONUS_DIR)/b_chk_arg_split_bonus.c\
 $(BONUS_DIR)/b_get_next_line_bonus.c\
 $(BONUS_DIR)/b_get_next_line_utils_bonus.c\
 $(BONUS_DIR)/b_instr_exec_bonus.c\
-$(BONUS_DIR)/b_instr_set_p__bonus.c\
-$(BONUS_DIR)/b_instr_set_r__bonus.c\
-$(BONUS_DIR)/b_instr_set_rr__bonus.c\
-$(BONUS_DIR)/b_instr_set_s__bonus.c\
+$(BONUS_DIR)/b_instr_set_1_bonus.c\
+$(BONUS_DIR)/b_instr_set_2_bonus.c\
+$(BONUS_DIR)/b_instr_set_3_bonus.c\
 $(BONUS_DIR)/b_instr_src_1_bonus.c\
 $(BONUS_DIR)/b_instr_src_2_bonus.c\
 $(BONUS_DIR)/b_main_bonus.c\

@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 13:11:29 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 14:00:05 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 15:45:27 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	rec_info_1(t_list *lst_a, t_list *lst_b, t_info *info)
 		lst_b = lst_b->next;
 	}
 	free (tmp);
-	tmp = NULL;
 	return ;
 }
 

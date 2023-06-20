@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 19:13:34 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/17 17:54:27 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 14:39:19 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	print_err(void)
 
 int	chk_sorted(t_list *lst)
 {
+	if (!lst)
+		return (1);
 	while (lst->next)
 	{
 		if (lst->data > lst->next->data)

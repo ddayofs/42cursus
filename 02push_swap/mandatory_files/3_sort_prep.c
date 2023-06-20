@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 14:30:41 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/16 15:56:10 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/20 15:53:55 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	make_indexed_lst(t_list **lst)
 		exit(1);
 	ch_int_to_idx(lst, tmp, lst_size);
 	free(tmp);
-	tmp = NULL;
 	return ;
 }
 
@@ -92,7 +91,7 @@ void	ready_to_greedy(t_list **lst_a, t_list **lst_b)
 
 	lst_a_size = ft_lstsize(*lst_a);
 	i = -1;
-	while (++i < lst_a_size && ft_lstsize(*lst_a) > 3)
+	while (++i < lst_a_size && 3 < ft_lstsize(*lst_a))
 	{
 		top = *lst_a;
 		if (top->data < lst_a_size / 3)

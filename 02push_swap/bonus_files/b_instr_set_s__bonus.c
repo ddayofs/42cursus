@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   b_instr_set_s__bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 15:43:34 by donglee2          #+#    #+#             */
-/*   Updated: 2023/05/30 13:34:56 by donglee2         ###   ########seoul.kr  */
+/*   Created: 2023/05/16 18:18:09 by donglee2          #+#    #+#             */
+/*   Updated: 2023/06/20 15:31:34 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "b_push_swap_bonus.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+void	s_(t_list **lst)
+{
+	t_list	*tmp1;
+	t_list	*tmp2;
 
-# include <unistd.h>
-# include <stdlib.h>
+	if (ft_lstsize(*lst) < 2)
+		return ;
+	tmp1 = *lst;
+	*lst = (*lst)->next;
+	tmp2 = (*lst)->next;
+	(*lst)->next = tmp1;
+	tmp1->next = tmp2;
+	return ;
+}
 
-char	*get_next_line(int fd);
+void	sa(t_list **lst)
+{
+	s_(lst);
+	return ;
+}
 
-ssize_t	ft_strlen(char *s);
-char	*ft_strdup(char *src);
-char	*ft_strchr(char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_substr(char *s, unsigned int start, size_t len);
-
-#endif
+void	sb(t_list **lst)
+{
+	s_(lst);
+	return ;
+}

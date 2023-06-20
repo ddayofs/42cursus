@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   b_instr_set_p__bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 15:56:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/05/30 15:58:00 by donglee2         ###   ########seoul.kr  */
+/*   Created: 2023/06/20 14:48:59 by donglee2          #+#    #+#             */
+/*   Updated: 2023/06/20 15:31:16 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "b_push_swap_bonus.h"
 
-int	ft_putchar(char c)
+void	p_(t_list **lst_a, t_list **lst_b)
 {
-	return (write(1, &c, 1));
+	t_list	*orib_1st;
+
+	if (!ft_lstsize(*lst_b))
+		return ;
+	orib_1st = *lst_b;
+	*lst_b = (*lst_b)->next;
+	ft_lstadd_front(lst_a, orib_1st);
+	return ;
+}
+
+void	pa(t_list **lst_a, t_list **lst_b)
+{
+	p_(lst_a, lst_b);
+	return ;
+}
+
+void	pb(t_list **lst_b, t_list **lst_a)
+{
+	p_(lst_b, lst_a);
+	return ;
 }
