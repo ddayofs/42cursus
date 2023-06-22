@@ -6,13 +6,13 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 19:13:34 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/20 16:03:07 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/22 15:20:08 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "b_push_swap_bonus.h"
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 void	chk_arg(char *str, t_list **lst_a)
 {

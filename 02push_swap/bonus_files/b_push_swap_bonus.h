@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 19:23:48 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/20 15:14:50 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/22 15:19:27 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # define RA_RRB			1
 # define RA_RB			2
 # define RRA_RRB		3
-# define INT_MAX		2147483647;
-# define INT_MIN		-2147483648;
-# define USINT_MAX		4294967295;
+# define INT_MAX		2147483647
+# define INT_MIN		-2147483648
+# define UINT_MAX		4294967295
 
 typedef struct s_list
 {
