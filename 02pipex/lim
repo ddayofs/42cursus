@@ -1,0 +1,7 @@
+Makefile
+a.out
+infile.txt
+lim
+outfile.txt
+pipex.c
+pipex.h

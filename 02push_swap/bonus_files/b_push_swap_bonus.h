@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 19:23:48 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/22 15:34:02 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/23 14:26:45 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ int		ft_strcmp(char *s1, char *s2);
 void	free_all(char **tmp1);
 
 //b_chk_arg_2_bonus.c
-void	chk_arg(char *str, t_list **lst_a);
-void	print_err(void);
-void	if_plus(char *str);
+
+void	chk_plus_zero_front(char *str);
 int		chk_sorted(t_list *lst);
 int		chk_dup(t_list	*lst);
+
+//b_chk_arg_3_bonus.c
+void	chk_arg(char *str, t_list **lst_a);
+void	print_err(void);
 
 //b_chk_arg_split_bonus.c
 char	**ft_split(char const *s, char c);
