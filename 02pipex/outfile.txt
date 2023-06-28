@@ -1,6 +1,0 @@
-ace
-board
-kite
-orange
-question
-zebra
