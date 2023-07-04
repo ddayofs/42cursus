@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:14:25 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/04 21:33:46 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/04 21:55:18 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	free_all_splits(char **split_path)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	while (split_path[++i])
 		free(split_path[i]);
 	free(split_path);
