@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:14:25 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/04 21:55:18 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/05 20:01:53 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	*extract_cmd(char *str)
 	split_str = ft_split(str, ' ');
 	if (!split_str)
 		exit(1);
-	tmp = split_str[0];
+	tmp = ft_strdup(split_str[0]);
+	if (!tmp)
+		exit(1);
 	i = 0;
 	free_all_splits(split_str);
 	return (tmp);
@@ -59,17 +61,12 @@ void	free_all_splits(char **split_path)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	while (split_path[++i])
 		free(split_path[i]);
 	free(split_path);
 }
 
-// perror(cmd);//perror 번호. 추가 ?? 에러메시지 추ㅏㄱ 가능?
-// zsh: command not found: <user input>
-// vs <user input>: No such file or directory
-// what about options????
-// implementation : error message
 char	*find_cmd_path(char *cmd, char **envp)
 {
 	char	*path;
@@ -89,11 +86,13 @@ char	*find_cmd_path(char *cmd, char **envp)
 		split_path[i] = add_cmd_to_path(split_path[i], cmd);
 		if (access(split_path[i], X_OK) == 0)
 		{
-			// ret = ft_strdup(split_path[i]);
-			ret = split_path[i];
+			ret = ft_strdup(split_path[i]);
 			free_all_splits(split_path);
 			return (ret);
 		}
 	}
+	ft_putstr_fd(cmd, STDERR_FILENO);
+	ft_putstr_fd(": command not found\n", STDERR_FILENO);
+	exit(127);
 	return (NULL);
 }

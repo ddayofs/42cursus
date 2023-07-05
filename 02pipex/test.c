@@ -249,7 +249,7 @@ int main()
 //     int fd = open("tmp.txt", O_WRONLY);
 //     if (fd == -1) {
 //         // 파일 열기 실패
-//         return 1;
+`//         return 1;
 //     }
 
 //     const char* data = "Hello, World!\n\n\n";

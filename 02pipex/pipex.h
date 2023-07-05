@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:33:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/04 19:32:35 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/05 20:03:03 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 
 # include <stdio.h>
 
-typedef struct s_pipe
+typedef	struct s_args
 {
-	int	front_pipe;
-	int	back_pipe;
-}t_pipe;
+	int		idx;
+	char	*cmd_path;
+	char	**split_cmd;
+}t_args;
 
 //path.c
 char	*extract_cmd(char *str);

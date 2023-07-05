@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:10:22 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/04 17:44:03 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/05 15:15:02 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char *argv[], char **envp)
 		dup2(fds[1], 1);
 		close(fds[1]);
 		execve();
-	}
+ 	}
 	//2nd fork
 	pid = fork();
 	if (pid == 0)
