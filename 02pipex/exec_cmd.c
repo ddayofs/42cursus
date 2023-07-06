@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:01:08 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 17:11:57 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/06 19:45:51 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ void	exec_1st_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 
 	fd = open (file_name, O_RDONLY);
 	if (fd == -1)
+	{
+		ft_putstr_fd("bash: ", STDERR_FILENO);
+		perror(file_name);
 		exit(1);
+	}
 	dup2(fd, STDIN_FILENO);
 	close (fd);
 	close(fds[0]);

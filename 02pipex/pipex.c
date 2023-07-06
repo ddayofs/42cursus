@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:04:58 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 17:20:23 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/06 19:39:06 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	wait_child_proc(pid_t last_pid, int argc, int *status)
 	i = -1;
 	while(++i < argc - 3)
 	{
-		pid = waitpid(-1, status, 0);
-		if (pid == last_pid)
-			parent_status = WEXITSTATUS(status); 
+		pid = waitpid(-1, status, 0);//종료되는 순서대로 status가 기록된다. cmd순서가 아니라.
+		if (pid == last_pid)//last pid는 마지막 cmd(마지막 fork) childprocess의 pid
+			parent_status = WEXITSTATUS(status);
 	}
 	exit(parent_status);
 }

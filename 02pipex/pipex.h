@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:33:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 17:11:07 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/06 17:51:42 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
-
+# include <string.h>
 # include <stdio.h>
 
 typedef	struct s_args
