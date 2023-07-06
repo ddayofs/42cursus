@@ -6,19 +6,20 @@
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/05 20:01:47 by donglee2          #+#    #+#              #
-#    Updated: 2023/06/20 15:19:11 by donglee2         ###   ########seoul.kr   #
+#    Updated: 2023/06/23 13:30:01 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 BONUS_NAME = checker
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 MANDATORY_DIR = ./mandatory_files
 
 MANDATORY_SRCS = $(MANDATORY_DIR)/0_chk_arg_1.c\
 $(MANDATORY_DIR)/0_chk_arg_2.c\
+$(MANDATORY_DIR)/0_chk_arg_3.c\
 $(MANDATORY_DIR)/0_chk_arg_split.c\
 $(MANDATORY_DIR)/1_instr_src_1.c\
 $(MANDATORY_DIR)/1_instr_src_2.c\
@@ -40,6 +41,7 @@ BONUS_DIR = ./bonus_files
 
 BONUS_SRCS = $(BONUS_DIR)/b_chk_arg_1_bonus.c\
 $(BONUS_DIR)/b_chk_arg_2_bonus.c\
+$(BONUS_DIR)/b_chk_arg_3_bonus.c\
 $(BONUS_DIR)/b_chk_arg_split_bonus.c\
 $(BONUS_DIR)/b_get_next_line_bonus.c\
 $(BONUS_DIR)/b_get_next_line_utils_bonus.c\

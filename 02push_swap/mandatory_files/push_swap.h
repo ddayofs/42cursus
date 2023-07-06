@@ -6,7 +6,11 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:51 by donglee2          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/06/21 13:01:15 by donglee2         ###   ########seoul.kr  */
+=======
+/*   Updated: 2023/06/23 13:41:19 by donglee2         ###   ########seoul.kr  */
+>>>>>>> master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +23,13 @@
 # define RRA_RRB		3
 # define INT_MAX		2147483647
 # define INT_MIN		-2147483648
+<<<<<<< HEAD
 # define UINT_MAX		4294967295
+=======
+# define USINT_MAX		4294967295
+
+# include <stdio.h>
+>>>>>>> master
 
 typedef struct s_list
 {
@@ -47,11 +57,15 @@ int		ft_strcmp(char *s1, char *s2);
 void	free_all(char **tmp1);
 
 //chk_arg_2.c
+void	chk_plus_front(char *str);
+void	chk_zero_front(char *str);
+int		chk_sorted(t_list *lst);
+void	chk_plus_zero_front(char *str);
+int		chk_dup(t_list	*lst);
+
+//chk_arg_3.c
 void	chk_arg(char *str, t_list **lst_a);
 void	print_err(void);
-void	if_plus(char *str);
-int		chk_sorted(t_list *lst);
-int		chk_dup(t_list	*lst);
 
 //chk_arg_split.c
 char	**ft_split(char const *s, char c);
