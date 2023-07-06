@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:01:08 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 19:45:51 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/06 20:36:48 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	exec_1st_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 	{
 		ft_putstr_fd("bash: ", STDERR_FILENO);
 		perror(file_name);
-		exit(1);
+		// exit(1);
+		return ;
 	}
 	dup2(fd, STDIN_FILENO);
 	close (fd);
@@ -41,7 +42,12 @@ void	exec_last_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 	close(fds[0]);
 	fd = open(file_name, O_CREAT | O_WRONLY | O_TRUNC, 0644);
 	if (fd == -1)
-		exit(1);
+	{
+		ft_putstr_fd("bash: ", STDERR_FILENO);
+		perror(file_name);
+		// exit(1);
+		return ;
+	}
 	dup2(fd, STDOUT_FILENO);
 	close (fd);
 	execve(args->cmd_path, args->split_cmd, envp);
