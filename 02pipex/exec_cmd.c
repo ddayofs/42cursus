@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:01:08 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 12:22:57 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/06 17:11:57 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	exec_last_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 	exit(1);
 }
 
-void	exec_child_proc(t_args *args, int idx, int fds[2], char **envp)
+pid_t	exec_child_proc(t_args *args, int idx, int fds[2], char **envp)
 {
 	pid_t	pid;
 
@@ -56,4 +56,5 @@ void	exec_child_proc(t_args *args, int idx, int fds[2], char **envp)
 		exec_1st_cmd(args->infile_name, fds, args, envp);
 	else if (pid == 0)
 		exec_last_cmd(args->outfile_name, fds, args, envp);
+	return (pid);
 }

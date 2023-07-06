@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:14:25 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/05 20:01:53 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/06 15:55:00 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ char	*find_cmd_path(char *cmd, char **envp)
 			return (ret);
 		}
 	}
+	ft_putstr_fd("bash: ", STDERR_FILENO);
 	ft_putstr_fd(cmd, STDERR_FILENO);
 	ft_putstr_fd(": command not found\n", STDERR_FILENO);
 	exit(127);

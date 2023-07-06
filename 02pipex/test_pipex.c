@@ -9,7 +9,7 @@
 // 	printf("argc == %d\n", argc);	
 // }
 
-
+#include <sys/types.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <stdio.h>
@@ -181,7 +181,6 @@
 	
 // }
 
-
 // void print_argv1_again(char **argv)
 // {
 // 	printf("%s\n", argv[1]);
@@ -197,3 +196,28 @@
 // 	print_argv1(argv);	
 // 	system("leaks a.out");
 // }
+
+int main()
+{
+	int		status;
+	pid_t	pid;
+
+	for(int i = 0; i < 3; i++)
+	{
+		pid = fork();
+		if (pid == 0)
+		{
+			printf("i'm child proc\nchild pid is %d\n\n", getpid());
+			exit(0);
+		}
+		else
+		{
+			printf("i'm parent proc\nparent pid is %d\n\n", getpid());
+		}
+	}
+	for (int k = 0; k < 3; k++)
+	{
+		if(pid == waitpid(-1, &status, 0))
+			exit(WEXITSTATUS(status));
+	}
+}
