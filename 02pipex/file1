@@ -1,31 +1,38 @@
-TERM_PROGRAM=vscode
-TERM=xterm-256color
-SHELL=/bin/zsh
-TMPDIR=/var/folders/zz/zyxvpxvq6csfxvn_n000cx6m00379n/T/
-TERM_PROGRAM_VERSION=1.79.2
-ZDOTDIR=/Users/donglee2
-ORIGINAL_XDG_CURRENT_DESKTOP=undefined
-MallocNanoZone=0
-USER=donglee2
-COMMAND_MODE=unix2003
-SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.abVt9PVhKV/Listeners
-__CF_USER_TEXT_ENCODING=0x19D35:0x3:0x33
-PATH=/Users/donglee2/.brew/bin:/Users/donglee2/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
-_=/usr/bin/env
-LaunchInstanceID=67B79E8D-48D3-4969-B075-9F0644625F24
-USER_ZDOTDIR=/Users/donglee2
-PWD=/Users/donglee2/Desktop/42cursus/02pipex
-LANG=ko_KR.UTF-8
-VSCODE_GIT_ASKPASS_EXTRA_ARGS=--ms-enable-electron-run-as-node
-XPC_FLAGS=0x0
-XPC_SERVICE_NAME=0
-VSCODE_INJECTION=1
-SHLVL=2
-HOME=/Users/donglee2
-VSCODE_GIT_ASKPASS_MAIN=/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
-LOGNAME=donglee2
-VSCODE_GIT_IPC_HANDLE=/var/folders/zz/zyxvpxvq6csfxvn_n000cx6m00379n/T/vscode-git-2397a835ac.sock
-VSCODE_GIT_ASKPASS_NODE=/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)
-GIT_ASKPASS=/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
-SECURITYSESSIONID=186a6
-COLORTERM=truecolor
+NAME = pipex
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
+LDFLAGS = -L./00libft -lft
+MANDATORY_DIR = ./
+
+MANDATORY_SRCS = pipex.c\
+path.c\
+exec_cmd.c\
+init_variable.c\
+
+MANDATORY_OBJS = $(MANDATORY_SRCS:.c=.o)
+RM = rm -rf
+
+MAKE = make
+
+LIBFT = libft.a
+
+all: $(NAME)
+
+.c.o:
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(LIBFT):
+	$(MAKE) -C ./00libft bonus
+
+$(NAME): $(MANDATORY_OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $(NAME) $(MANDATORY_OBJS) $(LDFLAGS)
+
+clean:	
+	$(RM) $(MANDATORY_OBJS)
+	$(MAKE) -C ./00libft clean
+
+fclean: clean
+	$(RM) $(NAME)
+	$(RM) 00libft/$(LIBFT)
+re: fclean all

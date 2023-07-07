@@ -6,7 +6,7 @@
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 16:34:18 by donglee2          #+#    #+#              #
-#    Updated: 2023/07/07 14:08:17 by donglee2         ###   ########seoul.kr   #
+#    Updated: 2023/07/07 14:15:47 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ $(LIBFT):
 $(NAME): $(MANDATORY_OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) -o $(NAME) $(MANDATORY_OBJS) $(LDFLAGS)
 
-bonus: $(BONUS_OBJS)
+bonus: $(BONUS_OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) -o $(NAME) $(BONUS_OBJS) $(LDFLAGS)
 	touch $@
 
@@ -58,5 +58,6 @@ clean:
 	$(MAKE) -C ./00libft clean
 
 fclean: clean
-	$(RM) $(NAME) 00libft/$(LIBFT)
+	$(RM) $(NAME)
+	$(RM) 00libft/$(LIBFT)
 re: fclean all
