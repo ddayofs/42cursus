@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:04:58 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/07 13:39:12 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 19:11:13 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,34 @@ void	wait_child_proc(pid_t last_pid, int argc, int *status)
 
 }
 
+void	make_2pipes(int ***fds)
+{
+	int	i;
+
+	*fds = (int **)malloc(sizeof(int *) * 2);
+	if (!*fds)
+		exit (1);
+	i = -1;
+	while (++i < 2)
+	{
+		*fds[i] = (int *)malloc(sizeof(int) * 2);
+		if (!*fds[i])
+			exit(1);
+	}
+	i = -1;
+	while (++i < 2)
+		pipe(*fds[i]);
+}
+
 int	main(int argc, char *argv[], char **envp)
 {
 	int		status;
-	int		fds[2];
+	int		**fds;
 	pid_t	pid;
 	t_args	args;
 
-	if (argc != 5 || pipe(fds) == -1)
+	make_2pipes(&fds);
+	if (argc < 5 || pipe(fds) == -1)
 		return (1);
 	init_args(argv, argc, &args);
 	while (++args.idx < argc - 1)

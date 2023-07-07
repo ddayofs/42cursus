@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:33:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/07 14:13:27 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 15:52:44 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef	struct s_args
 	char	*infile_name;
 	char	*outfile_name;
 	char	**argv;
+	int		argc;
 }t_args;
 
 //exec_cmd.c

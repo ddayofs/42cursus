@@ -1,1 +1,10 @@
-f
+	$(MAKE) -C ./00libft clean
+CFLAGS = -Wall -Wextra -Werror -g
+LIBFT = libft.a
+MAKE = make
+all: $(NAME)
+clean:	
+fclean: clean
+init_variable.c\
+path.c\
+re: fclean all
