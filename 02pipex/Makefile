@@ -6,7 +6,7 @@
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 16:34:18 by donglee2          #+#    #+#              #
-#    Updated: 2023/07/04 14:59:18 by donglee2         ###   ########seoul.kr   #
+#    Updated: 2023/07/06 12:07:59 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ LDFLAGS = -L./00libft -lft
 MANDATORY_DIR = ./
 
 MANDATORY_SRCS = pipex.c\
-path.c
+path.c\
+exec_cmd.c\
+init_variable.c\
 
 MANDATORY_OBJS = $(MANDATORY_SRCS:.c=.o)
 RM = rm -rf

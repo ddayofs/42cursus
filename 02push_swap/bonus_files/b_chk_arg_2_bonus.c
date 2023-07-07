@@ -6,13 +6,17 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 19:13:34 by donglee2          #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2023/06/22 15:20:08 by donglee2         ###   ########seoul.kr  */
+=======
 /*   Updated: 2023/06/23 14:36:08 by donglee2         ###   ########seoul.kr  */
+>>>>>>> master
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "b_push_swap_bonus.h"
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 void	chk_plus_front(char *str)
 {

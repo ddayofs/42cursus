@@ -1,20 +1,31 @@
-accessiblefkfld;s fdksl;hf fjkrelf fnmrjkl
-c
-d
-g
-f45
-32
-645
-7
-ghj
-r
-bvfsv
-dsv
-fds
-vt
-rwt34
-\t
-g
-wfs
-gdfs
-bufferv
+TERM_PROGRAM=vscode
+TERM=xterm-256color
+SHELL=/bin/zsh
+TMPDIR=/var/folders/zz/zyxvpxvq6csfxvn_n000cx6m00379n/T/
+TERM_PROGRAM_VERSION=1.79.2
+ZDOTDIR=/Users/donglee2
+ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+MallocNanoZone=0
+USER=donglee2
+COMMAND_MODE=unix2003
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.abVt9PVhKV/Listeners
+__CF_USER_TEXT_ENCODING=0x19D35:0x3:0x33
+PATH=/Users/donglee2/.brew/bin:/Users/donglee2/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+_=/usr/bin/env
+LaunchInstanceID=67B79E8D-48D3-4969-B075-9F0644625F24
+USER_ZDOTDIR=/Users/donglee2
+PWD=/Users/donglee2/Desktop/42cursus/02pipex
+LANG=ko_KR.UTF-8
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=--ms-enable-electron-run-as-node
+XPC_FLAGS=0x0
+XPC_SERVICE_NAME=0
+VSCODE_INJECTION=1
+SHLVL=2
+HOME=/Users/donglee2
+VSCODE_GIT_ASKPASS_MAIN=/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
+LOGNAME=donglee2
+VSCODE_GIT_IPC_HANDLE=/var/folders/zz/zyxvpxvq6csfxvn_n000cx6m00379n/T/vscode-git-2397a835ac.sock
+VSCODE_GIT_ASKPASS_NODE=/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)
+GIT_ASKPASS=/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
+SECURITYSESSIONID=186a6
+COLORTERM=truecolor

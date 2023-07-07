@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_sort_rec_info_src.c                              :+:      :+:    :+:   */
+/*   4_sort_rec_info_1_src_1.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 13:35:32 by donglee2          #+#    #+#             */
-/*   Updated: 2023/06/15 12:18:32 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/06/21 13:01:41 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	info_init(t_info *info)
 	info->rrb_num = -1;
 	info->rrr_num = -1;
 	info->comb = 777;
-	info->cnt = USINT_MAX;
+	info->cnt = UINT_MAX;
 	return ;
 }
 
