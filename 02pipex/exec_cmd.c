@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:01:08 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 21:09:48 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 11:47:09 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	exec_1st_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 	close(fds[0]);
 	dup2(fds[1], 1);
 	close(fds[1]);
-	update_cmd_in_args(args->argv[args->idx], args, envp);
+	// update_cmd_in_args(args->argv[args->idx], args, envp);
+	update_cmd_in_args(args->idx, args, envp);
 	execve(args->cmd_path, args->split_cmd, envp);
 	exit(1);
 }
@@ -49,7 +50,8 @@ void	exec_last_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 	}
 	dup2(fd, STDOUT_FILENO);
 	close (fd);
-	update_cmd_in_args(args->argv[args->idx], args, envp);
+	// update_cmd_in_args(args->argv[args->idx], args, envp);
+	update_cmd_in_args(args->idx, args, envp);
 	execve(args->cmd_path, args->split_cmd, envp);
 	exit(1);
 }

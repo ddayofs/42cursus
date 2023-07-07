@@ -6,14 +6,14 @@
 #    By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/19 16:34:18 by donglee2          #+#    #+#              #
-#    Updated: 2023/07/06 12:07:59 by donglee2         ###   ########seoul.kr   #
+#    Updated: 2023/07/07 11:22:38 by donglee2         ###   ########seoul.kr   #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 LDFLAGS = -L./00libft -lft
 MANDATORY_DIR = ./
 

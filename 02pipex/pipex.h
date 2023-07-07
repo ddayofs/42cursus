@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:33:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 17:51:42 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 11:46:11 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ char	*find_cmd_path(char *cmd, char **envp);
 
 //init_variable.c
 void	add_file_name_to_args(char *argv[], int argc, t_args *args);
-void	update_cmd_in_args(char *str, t_args *args, char **envp);
+void	update_cmd_in_args(int idx, t_args *args, char **envp);
 
 #endif

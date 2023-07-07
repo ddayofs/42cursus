@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:07:05 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 17:14:43 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 11:45:27 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	add_file_name_to_args(char *argv[], int argc, t_args *args)
 	args->idx = 1;
 }
 
-void	update_cmd_in_args(char *str, t_args *args, char **envp)
+void	update_cmd_in_args(int idx, t_args *args, char **envp)
 {
 	char	*extracted;
 
-	extracted = extract_cmd(str);
+	extracted = extract_cmd(args->argv[idx]);
 	args->cmd_path =  find_cmd_path(extracted, envp);
-	args->split_cmd = ft_split(str, ' ');
+	args->split_cmd = ft_split(args->argv[idx], ' ');
 }

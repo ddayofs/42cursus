@@ -7,10 +7,10 @@
 		{
 			"type": "lldb",
 			"request": "launch",
-			"name": "Debug",
-			"program": "${workspaceFolder}/pipex",
-			"args": ["ls"],
-			"cwd": "${workspaceFolder}"
+			"name": "Debug lldb",
+			"program": "${fileDirname}/pipex",
+			"args": ["file1", "cat", "cat", "file2"],
+			"cwd": "${fileDirname}"
 		}
 	]
 }
