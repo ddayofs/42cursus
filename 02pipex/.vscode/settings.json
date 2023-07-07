@@ -3,6 +3,9 @@
 		"stdio.h": "c",
 		"fcntl.h": "c",
 		"unistd.h": "c",
-		"locale": "c"
+		"locale": "c",
+		"pipex.h": "c",
+		"libft.h": "c",
+		"pipex_bonus.h": "c"
 	}
 }

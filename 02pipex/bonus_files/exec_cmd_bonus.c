@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exec_cmd.c                                         :+:      :+:    :+:   */
+/*   exec_cmd_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:01:08 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/07 11:47:09 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 12:47:02 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
 void	exec_1st_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 {
@@ -28,7 +28,6 @@ void	exec_1st_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 	close(fds[0]);
 	dup2(fds[1], 1);
 	close(fds[1]);
-	// update_cmd_in_args(args->argv[args->idx], args, envp);
 	update_cmd_in_args(args->idx, args, envp);
 	execve(args->cmd_path, args->split_cmd, envp);
 	exit(1);
@@ -50,7 +49,6 @@ void	exec_last_cmd(char *file_name, int fds[2], t_args *args, char **envp)
 	}
 	dup2(fd, STDOUT_FILENO);
 	close (fd);
-	// update_cmd_in_args(args->argv[args->idx], args, envp);
 	update_cmd_in_args(args->idx, args, envp);
 	execve(args->cmd_path, args->split_cmd, envp);
 	exit(1);
@@ -60,7 +58,6 @@ pid_t	exec_child_proc(t_args *args, int idx, int fds[2], char **envp)
 {
 	pid_t	pid;
 
-	// update_cmd_in_args(args->argv[args->idx], args, envp);
 	pid = fork();
 	if (pid < 0)
 		exit(1);
@@ -68,6 +65,5 @@ pid_t	exec_child_proc(t_args *args, int idx, int fds[2], char **envp)
 		exec_1st_cmd(args->infile_name, fds, args, envp);
 	else if (pid == 0)
 		exec_last_cmd(args->outfile_name, fds, args, envp);
-
 	return (pid);
 }

@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:04:58 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/06 19:39:06 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 12:26:48 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,24 @@ void	wait_child_proc(pid_t last_pid, int argc, int *status)
 		if (pid == last_pid)//last pid는 마지막 cmd(마지막 fork) childprocess의 pid
 			parent_status = WEXITSTATUS(status);
 	}
-	exit(parent_status);
+	exit (parent_status);
+	// exit(0);
+	// return (parent_status);
 }
+
+// void	wait_child_proc(pid_t last_pid, int argc, int *status)
+// {
+// 	pid_t	pid;
+// 	int		i;
+	
+// 	last_pid = 444;
+// 	i = -1;
+// 	while(++i < argc - 3)
+// 	{
+// 		pid = waitpid(-1, status, 0);
+// 	}
+// 	exit (WEXITSTATUS(status));
+// }
 
 int	main(int argc, char *argv[], char **envp)
 {
@@ -43,4 +59,5 @@ int	main(int argc, char *argv[], char **envp)
 	close(fds[0]);
 	close(fds[1]);
 	wait_child_proc(pid, argc, &status);
+	// return(wait_child_proc(pid, argc, &status));
 }

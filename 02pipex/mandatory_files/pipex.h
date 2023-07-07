@@ -6,14 +6,14 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:33:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/07 11:46:11 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/07 12:37:08 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include "00libft/libft.h"
+# include "../00libft/libft.h"
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdlib.h>
