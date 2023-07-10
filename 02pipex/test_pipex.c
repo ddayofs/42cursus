@@ -197,27 +197,105 @@
 // 	system("leaks a.out");
 // }
 
+// int main()
+// {
+// 	int		status;
+// 	pid_t	pid;
+
+// 	for(int i = 0; i < 3; i++)
+// 	{
+// 		pid = fork();
+// 		if (pid == 0)
+// 		{
+// 			printf("i'm child proc\nchild pid is %d\n", getpid());
+// 			printf("fork() ret == %d\n\n", pid);
+// 			exit(0);
+// 		}
+// 		else
+// 		{
+// 			printf("i'm parent proc\nparent pid is %d\n", getpid());
+// 			printf("fork() ret == %d\n\n", pid);
+// 		}
+// 	}
+// 	for (int k = 0; k < 3; k++)
+// 	{
+// 		if(pid == waitpid(-1, &status, 0))
+// 			exit(WEXITSTATUS(status));
+// 	}
+// }
+
+//make 2pipes---------------------------------------------------
+//*****************************************************
+void make_2pipes(int ***fds)
+{
+	int i;
+
+	*fds = (int **)malloc(sizeof(int *) * 2);
+	if (!*fds)
+		exit(1);
+	i = -1;
+	while (++i < 2)
+	{
+		// (*fds)[i] = (int *)malloc(sizeof(int) * 2);
+		*(*fds + i) = (int *)malloc(sizeof(int) * 2);
+		if (!(*fds)[i])
+			exit(1);
+	}
+	i = -1;
+	while (++i < 2)
+		pipe((*fds)[i]);
+}
+
+
 int main()
 {
-	int		status;
-	pid_t	pid;
+	int	**fds;
 
-	for(int i = 0; i < 3; i++)
+	make_2pipes(&fds);
+	for (int i = 0; i < 2; i++)
 	{
-		pid = fork();
-		if (pid == 0)
+		for (int j = 0; j < 2; j++)
 		{
-			printf("i'm child proc\nchild pid is %d\n\n", getpid());
-			exit(0);
+			printf("fds[%d][%d] == %d\n", i, j, fds[i][j]);
 		}
-		else
-		{
-			printf("i'm parent proc\nparent pid is %d\n\n", getpid());
-		}
-	}
-	for (int k = 0; k < 3; k++)
-	{
-		if(pid == waitpid(-1, &status, 0))
-			exit(WEXITSTATUS(status));
+		printf("\n");
 	}
 }
+
+//arr copy
+// int main()
+// {
+// 	int fds[2] = {3, 4};
+// 	int	*tmp;
+
+// 	tmp = fds;
+// 	for (int i = 0; i < 2; i++)
+// 		printf("%d\n", *(tmp + i));
+// 	printf("%p\n", tmp);
+// 	printf("%p\n", fds);
+// }
+
+// // pointer of pipes
+// int main()
+// {
+// 	int fds[2];
+// 	int	*tmp;
+// 	int	fds_2[2];
+
+// 	pipe(fds);
+// 	tmp= fds;
+// 	printf("before:\n");
+// 	for(int i = 0; i < 2; i++)
+// 		printf("fds[%d] == %d\n", i, fds[i]);
+// 	close(tmp[0]);
+// 	close(tmp[1]);
+// 	pipe(fds_2);
+// 	printf("\nafter:\n");
+// 	for(int i = 0; i < 2; i++)
+// 		printf("fds_2[%d] == %d\n", i, fds_2[i]);
+// 	printf("\nafter:\n");
+// 	for(int i = 0; i < 2; i++)
+// 		printf("fds[%d] == %d\n", i, fds[i]);
+// 	close(fds[0]);
+// 	close(fds[1]);
+// }

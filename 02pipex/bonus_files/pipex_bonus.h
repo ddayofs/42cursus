@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/19 16:33:53 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/07 15:52:44 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/10 20:47:07 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,17 @@ typedef	struct s_args
 	int		argc;
 }t_args;
 
+// typedef struct s_pipes
+// {
+// 	int	fds_1[2];
+// 	int	fds_2[2];
+// }t_pipes;
+
 //exec_cmd.c
-void	exec_1st_cmd(char *file_name, int fds[2], t_args *args, char **envp);
-void	exec_last_cmd(char *file_name, int fds[2], t_args *args, char **envp);
-pid_t	exec_child_proc(t_args *args, int idx, int fds[2], char **envp);
+void	exec_1st_cmd(char *file_name, int **fds, t_args *args, char **envp);
+void	exec_last_cmd(char *file_name, int **fds, t_args *args, char **envp);
+pid_t	exec_child_proc(t_args *args, int **fds, char **envp);
+
 
 //path.c
 char	*extract_cmd(char *str);
