@@ -9,5 +9,6 @@ file2
 lsfile2
 mandatory_files
 pipex
+pipex-tester
 test_pipex.c
 tmp_pipex.c
