@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 12:01:08 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/11 15:41:57 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/12 12:15:56 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,5 @@ pid_t	exec_child_proc(t_args *args, int **fds_ptr, char **envp)
 		if (args->idx < args->argc - 2)
 			pipe(fds_ptr[1 - i]);
 	}
-		printf("%d-------------------------------------------\n\n\n", args->idx);
 	return (pid);
 }

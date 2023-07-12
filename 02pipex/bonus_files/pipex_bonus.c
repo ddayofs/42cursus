@@ -6,7 +6,7 @@
 /*   By: donglee2 <donglee2@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 18:04:58 by donglee2          #+#    #+#             */
-/*   Updated: 2023/07/11 15:23:15 by donglee2         ###   ########seoul.kr  */
+/*   Updated: 2023/07/12 12:12:24 by donglee2         ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ void	wait_child_proc(pid_t last_pid, int argc, int *status)
 	{
 		pid = waitpid(-1, status, 0);
 		if (pid == last_pid)
-			parent_status = WEXITSTATUS(status);
+			parent_status = WEXITSTATUS(*status);
 	}
 	exit (parent_status);
-
 }
 
 // not freed yet
@@ -58,8 +57,6 @@ int	main(int argc, char *argv[], char **envp)
 	make_2arrs(&fds_ptr);
 	if (pipe(fds_ptr[0]) == -1)
 		return (1);
-	// for (int i = 0; i < 2; i++)
-	// 	printf("fds_ptr[0][%d] == %d\n", i, fds_ptr[0][i]);
 	init_args(argv, argc, &args);
 	while (++args.idx < argc - 1)
 		pid = exec_child_proc(&args, fds_ptr, envp);
